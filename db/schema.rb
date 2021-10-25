@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_085515) do
+ActiveRecord::Schema.define(version: 2021_10_25_062255) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2021_10_23_085515) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
