@@ -1,3 +1,9 @@
 <table class='table'>
-<h1>User info</h1>
-<tr><%= attachment_image_tag user, :profile_image_id, :fill, 100, 100, format: 'jpg', fallback: "user3.jpg" %></tr>
+    <h1>User info</h1>
+    <tr><%= attachment_image_tag user, :profile_image_id, :fill, 100, 100, format: 'jpg', fallback: "user3.jpg" %></tr>
+
+    <tr>
+        <th>name</th>
+        <th><%= user.name %></th>
+    </tr>
+</table>
