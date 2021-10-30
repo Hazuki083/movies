@@ -1,15 +1,18 @@
 class UsersController < ApplicationController
 
+  def new
+    @movie = Movie.new
+  end
+
   def index
     @user = current_user
-    @users = Users.all
+    @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-    
   end
-  
+
   def edit
   end
 end
