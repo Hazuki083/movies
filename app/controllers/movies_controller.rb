@@ -1,27 +1,31 @@
 class MoviesController < ApplicationController
+before_action :authenticate_user!
 
-  def new
+  def index
+    @user = current_user
     @movie = Movie.new
   end
 
-  def index
+  def show
   end
 
-  def show
+  def update
+
   end
 
   def edit
   end
 
   def create
-    movie = Movie.new(movie_params)
-    movie.save
-    redirect_to top
+    @movie = Movie.new(movie_params)
+    @movie.user_id = current_user.id
+    @movie.save
+    redirect_to '/top'
   end
 
   private
 
   def movie_params
-    params.reqire(:movie).permit(:title, :body)
+    params.require(:movie).permit(:title, :body)
   end
 end
